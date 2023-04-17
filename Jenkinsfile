@@ -5,11 +5,14 @@ pipeline {
       steps {
         echo 'Hello!'
         slackSend message: "started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-        emailext body: 'Hello email!', to: 'idriss.taghoury@gmail.com', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']]
+        emailext body: '$DEFAULT_CONTENT', to: 'idriss.taghoury@gmail.com', subject: '$DEFAULT_SUBJECT', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']]
       }
     }
   }
   post {
+    always {
+      echo "this will always be logged"
+    }
     success {
       slackSend message: "Finished ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)! Success!", color: "good"
     }
