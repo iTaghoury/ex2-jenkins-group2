@@ -1,4 +1,14 @@
 pipeline {
+
+  environment {
+    newIssue =  fields: [
+                  project: ['key': 'JEN'],
+                  summary: 'New JIRA issue created with Jenkins',
+                  description: 'Hello from Jenkins!',
+                  issueType: [name: 'Story']
+                ]
+  }
+
   agent any
   stages {
     stage('email') {
@@ -9,18 +19,9 @@ pipeline {
       }
     }
     stage('jira-test') {
-      def newIssue = [
-        fields: [
-          project: ['key': 'JEN'],
-          summary: 'New JIRA issue created with Jenkins',
-          description: 'Hello from Jenkins!',
-          issueType: [name: 'Story']
-        ]
-      ]
       steps {
         echo 'Starting jira-test...'
-        
-        jiraNewIssue issue: newIssue
+        jiraNewIssue issue: ${newIssue}
       }
     }
   }
