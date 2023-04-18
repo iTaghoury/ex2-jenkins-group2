@@ -17,7 +17,7 @@ pipeline {
                   project: ['key': 'JEN'],
                   summary: 'New JIRA issue created with Jenkins',
                   description: 'Hello from Jenkins!',
-                  issueType: [name: 'Story']
+                  issuetype: ['name': 'Story']
                 ]
               ]
           jiraNewIssue issue: newIssue, site: "iTaghoury's Site"
