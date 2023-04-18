@@ -35,7 +35,7 @@ pipeline {
           def failIssue =  [
                 fields: [
                   project: ['key': 'JEN'],
-                  summary: "Build ${env.BUILD_NUMBER} $BUILD_STATUS",
+                  summary: "Build ${env.BUILD_NUMBER} failed!",
                   description: "Something went wrong! Build ${env.BUILD_NUMBER} failed",
                   issuetype: ['name': 'Bug']
                 ]
