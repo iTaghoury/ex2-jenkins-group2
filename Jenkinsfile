@@ -1,14 +1,14 @@
 pipeline {
 
   environment {
-    newIssue =  "[
+    newIssue =  [
       fields: [
         project: ['key': 'JEN'],
         summary: 'New JIRA issue created with Jenkins',
         description: 'Hello from Jenkins!',
         issueType: [name: 'Story']
       ]
-    ]"
+    ]
   }
 
   agent any
@@ -23,7 +23,7 @@ pipeline {
     stage('jira-test') {
       steps {
         echo 'Starting jira-test...'
-        jiraNewIssue issue: "${newIssue}"
+        jiraNewIssue issue: newIssue
       }
     }
   }
