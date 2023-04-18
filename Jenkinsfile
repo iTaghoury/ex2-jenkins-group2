@@ -1,12 +1,14 @@
 pipeline {
 
   environment {
-    newIssue =  fields: [
-                  project: ['key': 'JEN'],
-                  summary: 'New JIRA issue created with Jenkins',
-                  description: 'Hello from Jenkins!',
-                  issueType: [name: 'Story']
-                ]
+    newIssue =  [
+      fields: [
+        project: ['key': 'JEN'],
+        summary: 'New JIRA issue created with Jenkins',
+        description: 'Hello from Jenkins!',
+        issueType: [name: 'Story']
+      ]
+    ]
   }
 
   agent any
