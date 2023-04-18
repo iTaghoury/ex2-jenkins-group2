@@ -20,7 +20,7 @@ pipeline {
                   issueType: [name: 'Story']
                 ]
               ]
-          jiraNewIssue issue: newIssue, site: "https://itaghoury.atlassian.net/"
+          jiraNewIssue issue: newIssue, site: "iTaghoury's Site"
         }
       }
     }
