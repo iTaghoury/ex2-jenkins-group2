@@ -20,7 +20,7 @@ pipeline {
                   issueType: [name: 'Story']
                 ]
               ]
-          jiraNewIssue issue: newIssue
+          jiraNewIssue issue: newIssue, site: "${JIRA_SITE}"
         }
       }
     }
