@@ -23,7 +23,7 @@ pipeline {
     stage('jira-test') {
       steps {
         echo 'Starting jira-test...'
-        jiraNewIssue issue: ${newIssue}
+        jiraNewIssue issue: "${newIssue}"
       }
     }
   }
