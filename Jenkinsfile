@@ -20,8 +20,8 @@ pipeline {
                   issueType: [name: 'Story']
                 ]
               ]
+          jiraNewIssue issue: newIssue
         }
-        jiraNewIssue issue: newIssue
       }
     }
   }
