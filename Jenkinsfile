@@ -36,7 +36,7 @@ pipeline {
                 fields: [
                   project: ['key': 'JEN'],
                   summary: "Build ${env.BUILD_NUMBER} failed!",
-                  description: "Something went wrong! Build ${env.BUILD_NUMBER} failed. (<${env.BUILD_URL}|Check out to find the problem>)",
+                  description: "Something went wrong! Build ${env.BUILD_NUMBER} failed. Check out ${env.BUILD_URL} to find the problem",
                   issuetype: ['name': 'Bug']
                 ]
               ]
